@@ -1,0 +1,8 @@
+meu_projeto/
+├── Cargo.toml
+└── src/
+    ├── main.rs            # A Raiz do Crate (Crate Root)
+    ├── hardware.rs        # Módulo Simples (Arquivo único)
+    └── rede/              # Módulo Complexo (Pasta com submódulos)
+        ├── mod.rs         # O "Controlador" do módulo de rede
+        └── serial.rs      # Um submódulo dentro de rede

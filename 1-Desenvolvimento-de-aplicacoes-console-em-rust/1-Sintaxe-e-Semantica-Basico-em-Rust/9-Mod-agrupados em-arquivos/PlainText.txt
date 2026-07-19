@@ -1,0 +1,8 @@
+meu_projeto/
+├── Cargo.toml
+└── src/
+    ├── main.rs            # Raiz do projeto
+    ├── rede.rs            # O arquivo PAI (Controlador do módulo de rede)
+    └── rede/              # A pasta que contém os submódulos de rede
+        ├── serial.rs      # Submódulo 1
+        └── ethernet.rs    # Submódulo 2
