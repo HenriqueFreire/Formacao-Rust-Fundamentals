@@ -1,4 +1,5 @@
 mod models;
+mod db;
 mod tela;
 
 use tela::menu;

@@ -1,7 +1,11 @@
+use crate::db::cliente_db::ClienteDb;
+use crate::tela::cliente_tela::*;
 use crate::tela::ler::*;
 use crate::tela::operacoes_basicas::*;
 
 pub fn mostrar_menu() {
+    let mut db = ClienteDb::new();
+
     loop {
         limpar_tela();
 
@@ -16,21 +20,22 @@ pub fn mostrar_menu() {
         );
 
         let opcao: i32 = ler_dados_int();
-        limpar_tela();
         match opcao {
-            1 => println!("Opção 1"),
-            2 => println!("Opção 2"),
-            3 => println!("Opção 3"),
-            4 => println!("Opção 4"),
+            1 => cadastrar_cliente(&mut db),
+            2 => alterar_cliente(&mut db),
+            3 => excluir_cliente(&mut db),
+            4 => listar_clientes(&db),
             0 => {
-                println!("Saiu");
+                limpar_tela();
+                println!("Saindo do programa... Até logo!");
+                esperar(1);
                 break;
             }
-            _ => println!("Opção inválida"),
+            _ => {
+                limpar_tela();
+                println!("Opção inválida!");
+                esperar(2);
+            }
         }
-        
-        //println!("Tecle Enter para continuar...");
-        //ler_dados();
-        esperar(tempo: 3)
     }
 }
